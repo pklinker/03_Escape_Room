@@ -42,11 +42,7 @@ void UGrabber::FindPhysicsHandleComponent(FString &ObjectName)
 {
 	/// look for attached physics handle
 	PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
-	if (PhysicsHandle)
-	{
-		UE_LOG(LogTemp, Display, TEXT("Found the default pawn physics handle for %s."), *ObjectName);
-	}
-	else
+	if (!PhysicsHandle)
 	{
 		UE_LOG(LogTemp, Error, TEXT("Cannot find the default pawn physics handle for %s."), *ObjectName);
 

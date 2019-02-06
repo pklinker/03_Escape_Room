@@ -68,6 +68,8 @@ void UGrabber::SetupInputComponent(FString &ObjectName)
 
 	}
 }
+
+// Grab the object in front
 void UGrabber::Grab() 
 {
 	// line trace and try and reach any actors with a collision channel set
@@ -92,6 +94,7 @@ void UGrabber::Grab()
 	UE_LOG(LogTemp, Display, TEXT("Grab pressed."))
 }
 
+// Release the grabbed object
 void UGrabber::Release()
 {
 	UE_LOG(LogTemp, Display, TEXT("Release pressed."))
@@ -122,6 +125,8 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 		}
 	}
 }
+
+// Grab teh first body that can be reached
 FHitResult UGrabber::GetFirstPhysicsBodyInReach() 
 {
 	// if the physics handle is attached, move the object that we are holding
